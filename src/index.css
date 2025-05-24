@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  --primary: #00ffc4;
+  --secondary: #ff00f5;
+  --tertiary: #ffcc00;
+  --background: #0d1117;
+  --terminal-bg: rgba(18, 20, 26, 0.95);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: var(--background);
+  color: white;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Terminal font */
+.terminal-font {
+  font-family: 'Space Mono', monospace;
+}
+
+/* Glow effects */
+.glow-text {
+  text-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+.glow-border {
+  box-shadow: 0 0 10px currentColor, 0 0 20px currentColor;
+}
+
+/* Scan line effect */
+.scan-lines {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255, 255, 255, 0.03) 50%,
+    transparent 100%
+  );
+  background-size: 100% 4px;
+  z-index: 1;
+  pointer-events: none;
+}
